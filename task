@@ -1,0 +1,173 @@
+Task-5
+1)Do the below programs in anonymous function 
+
+A)Print odd numbers in an array.
+ 
+let numbers=[1,2,3,4,5,6,7]
+let OddNumbers = numbers.filter(number => number % 2);
+console.log(OddNumbers);
+
+
+B)Convert all the strings to title caps in a string array.
+
+var string=["sai","yeshu","manu","vicky"];
+var title=string.map(a=>a.toLowerCase())
+var titlecaps=title.map(a=>a[0].toUpperCase()+a.slice(1));
+console.log(titlecaps)
+
+
+C)Print sum of all numbers in array.
+var arr=[4,5,5,16,21];
+var sum=0;
+(function(){
+for(var x of arr){
+    sum=sum+x
+}
+console.log(sum)
+}(arr))
+
+
+D)Return all the prime numbers in an array.
+
+var a=[4,5,5,16,21];
+var Prime=function(){
+var b=[]
+for(i=0;i<a.length;i++){
+    for(j=2;j<=a[i];j++){
+        if(a[i]%j===0){
+           break;
+        }
+    }
+    if(a[i]===j){
+        b.push(a[i])
+    }
+}
+console.log(b)
+}
+ Prime() 
+
+
+E)Return all the palindromes in an array.
+
+var array=['sneha','level','abcd','madam']
+var b=[]
+var palindrome=function() {
+ 	for(var i=0;i<array.length;i++){
+ 	    var count=0
+    for(var j=0;j<array[i].length;j++){
+ 		if(array[i][j]!==array[i][(array[i].length-1)-j]) {
+ 		   break;
+ 		}
+ 		 count++
+    }
+   if(count===array[i].length){
+       b.push(array[i])
+   }
+ 	}
+ 	console.log(b)
+ } 
+ palindrome();
+
+
+F)Return median of two sorted arrays of same size.
+
+var ar1 = [1, 12, 15, 26, 38];
+var ar2 = [2, 13, 17, 30, 45];
+var median=function(){
+	var newarray=arr1.concat(arr2);
+	if(newarray.length%2===0){
+		console.log((newarray[newarray.length/2]+newarray[newarray.length/2-1])/2)
+	}
+	else {
+		console.log(newarray[Math.floor(newarray.length/2)])
+	}
+} 
+median() 
+
+
+G)Remove duplicates from an array.
+
+var arr=[1,2,3,1,4,2,5,2,1,8,9,5,8];
+var removeDuplicate=function(){
+	console.log(...new Set(arr))
+}
+ removeDuplicate() 
+
+
+H)Rotate an array by k times.
+
+var a=[1,2,3,4,5,6,8,9,10,11,12,13,14,15,16]
+var k=1
+var Rotatearray=function(){
+
+for(j=1;j<=k;j++){
+    temp=a[0]
+    for(i=0;i<a.length-1;i++){
+        a[i]=a[i+1]
+
+    }
+   a[i]=temp
+}
+console.log(a)
+} 
+Rotatearray() 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+3)Do the below programs in arrow functions.
+
+A)Print odd numbers in an array.
+
+let numbers=[1,2,3,4,5,6,7,8,9,10]
+let OddNumbers = numbers.filter(number => number % 2);
+console.log(OddNumbers); 
+
+
+b)Convert all the strings to title caps in a string array.
+
+var string=["sai","yeshu","manu","vicky"];
+var title=string.map(a=>a.toLowerCase())
+var titlecaps=title.map(a=>a[0].toUpperCase()+a.slice(1));
+console.log(titlecaps);
+
+
+c)Sum of all numbers in an array.
+
+var arr=[1,2,3,4,5,6,7,8.9]
+var res=arr.reduce((acc,ele)=>{
+    return acc+ele
+})
+console.log(res);
+
+
+d)Return all the prime numbers in an array.
+
+var numbers=[1,2,3,4,5,6,7,8,9];
+var prime=()=>{
+var result=numbers.filter(function(a){
+   var p=0;
+ if(a>1)
+  {
+  for(var i=2;i<=a;i++)
+    {
+  if(a%i==0   &&    a!=i)
+ {
+   p=1
+  }
+  }
+if(p==0)
+ {
+  return a;
+ }
+ }
+})
+console.log(result); 
+};
+prime()
+
+
+e)Return all the palindromes in an array
+
+var string1=['sneha','level','abcd','madam']
+var palindromeFunction=string1.filter(a=>(a.split('').reverse().join('')) ==a);
+console.log(palindromeFunction);
